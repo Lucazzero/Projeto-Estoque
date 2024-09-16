@@ -3,12 +3,14 @@ package visao;
 import java.util.ArrayList;
 
 import dominio.ClasseProduto;
-import repositorio.ClasseProdutoRepo;
+
+import servico.ClasseProdutoServico;
 
 public class ClasseProdutoVisao {
     public void Exibir(){
-        ClasseProdutoRepo repo = new ClasseProdutoRepo();
-        ArrayList<ClasseProduto> lista = repo.Browse();
+        ClasseProdutoServico srv = new ClasseProdutoServico();
+        ArrayList<ClasseProduto> lista = srv.Navegar();
+        System.out.println("=========================================");
         for (ClasseProduto cp : lista) {
             this.Imprimir(cp);
         }
