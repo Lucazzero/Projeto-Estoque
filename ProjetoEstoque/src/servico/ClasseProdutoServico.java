@@ -30,12 +30,12 @@ public class ClasseProdutoServico extends BaseServico<ClasseProduto> {
 
     @Override
     public ClasseProduto Adicionar(ClasseProduto obj) {
-        return this.Adicionar(obj);
+        return this.repositorio.Add(obj);
     }
 
     @Override
     public ClasseProduto Deletar(int chave) {
-        return this.Deletar(chave);
+        return this.repositorio.Delete(chave);
     }
     
 }

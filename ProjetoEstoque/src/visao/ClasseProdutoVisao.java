@@ -1,25 +1,78 @@
 package visao;
 
 import java.util.ArrayList;
-
 import dominio.ClasseProduto;
-
 import servico.ClasseProdutoServico;
 
 public class ClasseProdutoVisao {
+    
+    private ClasseProdutoServico srv;
+
+    public ClasseProdutoVisao(){
+        this.srv = new ClasseProdutoServico();
+    }
+
     public void Exibir(){
-        ClasseProdutoServico srv = new ClasseProdutoServico();
-        ArrayList<ClasseProduto> lista = srv.Navegar();
-        System.out.println("=========================================");
+        ArrayList<ClasseProduto> lista = this.srv.Navegar();
+        System.out.println("===========================================================");
         for (ClasseProduto cp : lista) {
             this.Imprimir(cp);
         }
     }
-    
-    private void Imprimir(ClasseProduto alvo){
+
+    public void ExibirPorLinha(){
+        ArrayList<ClasseProduto> lista = this.srv.Navegar();
+        System.out.println("===========================================================");
+        for (ClasseProduto cp : lista) {
+            this.ImprimirPorLinha(cp);
+        }
+    }
+
+    public void Imprimir(ClasseProduto cp){
         System.out.println("Classe de Produto:");
-        System.out.println("Codigo:" + alvo.getCodigo());
-        System.out.println("Descrição: "+ alvo.getDescricao());
-        System.out.println("Data de Inclusao: " + alvo.getDataDeInclusao());
-    } 
+        System.out.println("Código: " + cp.getCodigo());
+        System.out.println("Descrição: " + cp.getDescricao());
+        System.out.println("Data de Inclusão: " + cp.getDataDeInclusao());
+        System.out.println("--------------------------------------------------------");
+    }
+
+    public void ImprimirPorLinha(ClasseProduto cp){
+        String mensagem = "";
+        mensagem += "Classe de Produto: ";
+        mensagem += "Código: " + cp.getCodigo() + " | ";
+        mensagem += "Descrição: " + cp.getDescricao() + " | ";
+        mensagem += "Data de Inclusão: " + cp.getDataDeInclusao();
+        System.out.println(mensagem);
+    }
+
+    public void ImprimirPorLinha(int chave){
+        ClasseProduto cp = this.srv.Ler(chave);
+        this.ImprimirPorLinha(cp);
+    }
+
+
+    public void Criar(ClasseProduto novo){
+        this.srv.Adicionar(novo);
+    }
+
+    public void Editar(int chave, ClasseProduto alt){
+        ClasseProduto cp = this.srv.Ler(chave);
+        if (cp != null){
+            cp.setDescricao(alt.getDescricao());
+        }
+        else{
+            System.out.println("Item não localizado.");
+        }
+    }
+
+    public void Remover(int chave){
+        ClasseProduto cp = this.srv.Ler(chave);
+        if (cp != null){
+            this.srv.Deletar(chave);
+        }
+        else{
+            System.out.println("Item não localizado.");
+        }
+
+    }
 }
