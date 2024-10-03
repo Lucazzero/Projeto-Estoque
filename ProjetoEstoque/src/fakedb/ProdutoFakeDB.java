@@ -16,6 +16,9 @@ public class ProdutoFakeDB extends BaseFakeDB<Produto> {
         this.tabela.add(new Produto(1,"Carnes", LocalDate.now(), 1, 2.00));
     }
 
+    public ProdutoFakeDB(){
+        super();
+    }
   
        
 }

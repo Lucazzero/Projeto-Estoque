@@ -15,4 +15,8 @@ public class SubclasseProdutoFakeDB extends BaseFakeDB<SubclasseProduto> {
         this.tabela.add(new SubclasseProduto(1, "Carnes",LocalDate.now(), 2));
        
     }
+
+    public SubclasseProdutoFakeDB(){
+        super();
+    }
 }
