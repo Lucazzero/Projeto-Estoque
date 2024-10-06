@@ -8,7 +8,7 @@ public class ProdutoRepo extends BaseRepositorio<Produto>{
 
     public ProdutoRepo(){
         this.db = new ProdutoFakeDB();
-        this.dados = db.getTabelaproduto();
+        this.dados = db.getTabela();
     }
 
     @Override

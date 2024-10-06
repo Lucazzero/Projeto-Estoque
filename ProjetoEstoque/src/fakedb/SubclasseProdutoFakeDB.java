@@ -1,9 +1,8 @@
 package fakedb;
 
+import dominio.SubclasseProduto;
 import java.time.LocalDate;
 import java.util.ArrayList;
-
-import dominio.SubclasseProduto;
 
 public class SubclasseProdutoFakeDB extends BaseFakeDB<SubclasseProduto> {
 

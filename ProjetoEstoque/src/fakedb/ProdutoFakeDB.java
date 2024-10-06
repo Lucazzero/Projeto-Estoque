@@ -8,6 +8,8 @@ import dominio.Produto;
 
 public class ProdutoFakeDB extends BaseFakeDB<Produto> {
 
+    public Object getTabela;
+    
     @Override
     public void preencherDados() {
         if (this.tabela == null){

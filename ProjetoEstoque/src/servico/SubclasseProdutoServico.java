@@ -1,7 +1,6 @@
 package servico;
 
 import java.util.ArrayList;
-
 import dominio.SubclasseProduto;
 import repositorio.SubclasseProdutoRepo;
 

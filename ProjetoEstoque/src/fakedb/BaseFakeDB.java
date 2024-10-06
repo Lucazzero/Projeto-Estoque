@@ -5,23 +5,16 @@ import java.util.ArrayList;
 public abstract class BaseFakeDB<TDominio> {
 
     protected ArrayList<TDominio> tabela;
-    protected ArrayList<TDominio> tabelaSubClasse;
-    protected ArrayList<TDominio> tabelaProduto;
+
+    public BaseFakeDB(){
+        this.tabela = new ArrayList<>();
+        this.preencherDados();
+    }
     
     public ArrayList<TDominio>getTabela(){
         return this.tabela;
     }
 
-    public ArrayList<TDominio>getTabelaSubClasse(){
-        return this.tabelaSubClasse;
-    }
-
-    public ArrayList<TDominio>getTabelaproduto(){
-        return this.tabelaProduto;
-    }
     public abstract void preencherDados();
 
-    public BaseFakeDB(){
-        this.preencherDados();
-    }
 }
