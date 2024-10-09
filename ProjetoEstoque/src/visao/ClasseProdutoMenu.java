@@ -101,8 +101,6 @@ public class ClasseProdutoMenu extends BaseMenu {
         cp.setDescricao(descrição);
         cp.setDataDeInclusao(LocalDate.now());
 
-        this.srv.Adicionar(cp);
-
         if(this.srv.Adicionar(cp)!= null){
             System.out.println("Classe de Produto Adicionada com sucesso");
         }
