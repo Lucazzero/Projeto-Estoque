@@ -48,6 +48,7 @@ public class ClasseProdutoMenu extends BaseMenu {
                     this.Remover();
                     case 9:
                     System.out.println("Saindo");
+                    break;
                     default:
                     System.out.println("Opcao Invalida");
                     break;
